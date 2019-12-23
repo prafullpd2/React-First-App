@@ -1,0 +1,54 @@
+/* .Person{
+    width: 60%;
+    margin: 16px auto;
+    border: 1px solid #eee;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.delete-person{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background-color: #da9484;
+    border-radius: 56%;
+    height: 24px;
+    width: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.Person:before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    box-shadow:  -20px 20px 40px 0px #ccc;
+  }
+
+
+
+
+
+  @media (min-width: 500px) {
+
+    .Person{
+        width: 450px;
+    }
+
+} */
+
+
+
+
+
+
+
+
