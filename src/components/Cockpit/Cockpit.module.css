@@ -1,0 +1,26 @@
+
+.ToggleButton{
+    background-color: #ff5e00;
+    color: white;
+    font: inherit;
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #97d2a1;
+    border-radius:3px;
+    box-shadow: -8px 8px 7px 0px #c3bfbf;
+    outline: none;
+    cursor: pointer;
+}
+.ToggleButton:hover {
+    background-color: #fc8f50;
+    color: white;
+}
+.ToggleButton.Green{
+    background-color: green;
+}
+.ToggleButton.Green:hover {
+    background-color: rgb(48, 184, 48);
+}
+.btn-blue{
+    color: blue;
+}
