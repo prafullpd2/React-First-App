@@ -15,13 +15,29 @@ class App extends Component {
       { id: 'sasa', name: 'neon', age: 29 },
       { id: 'kjsda', name: 'Bee', age: 24 }
     ],
-    showPersons: true
+    showPersons: false,
+    showCockpit: true
 
   }  
 
   static getDerivedStateFromProps(props, state){
     console.log('[App js] getDerivedStateFromProps', props, state);
     return state;
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('[App js] shouldComponentUpdate');
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    console.log('[App js] getSnapshotBeforeUpdate');
+    return {mesage: '[App js] Snapshot'};
+    
+  }
+  componentDidUpdate(prevProps, prevState, snapshot){
+    console.log('[App js] componentDidUpdate', snapshot);
+
   }
   
   nameChangeHandler = ( event , id) =>{
@@ -63,9 +79,10 @@ class App extends Component {
   }
 
     render(){
+      console.log('[App js] render');
 
       let persons = null;
-      if(this.state.showPersons){
+      if(this.state.showPersons && this.state.showCockpit){
         persons = (
           <div>
             <Persons 
@@ -77,12 +94,20 @@ class App extends Component {
       }
       return  ( 
         <div className={classes.App}>
-              <Cockpit 
-                showPersons = {this.state.showPersons} 
-                persons={this.state.persons}
-                clicked = {this.togglePersonsState}
-                />
-              {persons}
+          <button onClick={() => {this.setState({
+            ...this.state,
+            showCockpit: !this.state.showCockpit
+          })}}>Toggle Cockpit</button>
+          {
+            this.state.showCockpit ?
+                      <Cockpit 
+                      showPersons = {this.state.showPersons} 
+                      persons={this.state.persons}
+                      clicked = {this.togglePersonsState}
+                      /> : null 
+          }
+
+          {persons}
         </div> 
         );
     }
